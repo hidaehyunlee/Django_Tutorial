@@ -20,4 +20,6 @@ import hello.views
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', hello.views.home, name='home'),
+    path('new/', hello.views.new, name='new'),
+    path('create/', hello.views.create, name='create'),
 ]

@@ -1,6 +1,11 @@
+<h1>블로그 글 목록입니다.</h1>
+<br>
+<a href="{% url 'new' %}">새 글쓰기</a>
+
 {% for blog in blogs.all%}
-	<h1> {{blog.title}} </h1>
-	<p> {{blog.created_at}}</p>
-	<p> {{blog.body}}</p>
-	<br><br>
+<div>
+    <h1> {{blog.title}}</h1>
+    <p> {{blog.created_at}}</p>
+    <p>{{blog.body}}</p>
+</div>
 {%endfor%}
