@@ -21,3 +21,14 @@ def create(request):
 def detail(request,post_id):
     onepost=get_object_or_404(Blog,pk=post_id)
     return render(request, 'detail.html', {'onepost':onepost})
+
+def edit(request,post_id):
+    onepost=get_object_or_404(Blog,pk=post_id)
+    return render(request,'edit.html',{'onepost':onepost})
+
+def update(request,post_id):
+    editpost=get_object_or_404(Blog,pk=post_id)
+    editpost.title=request.POST['title']
+    editpost.body=request.POST['body']
+    editpost.save()
+    return redirect('/detail/'+str(post_id))

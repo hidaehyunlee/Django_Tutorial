@@ -1,0 +1,15 @@
+<form action="{% url 'update' onepost.id %}" method="POST">
+    {% csrf_token %}
+    <label for="title">제목</label> <br>
+    <input type="text" name="title" id="title" value="{{onepost.title}}">
+    <br><br>
+ 
+    <label for="body">내용</label> <br>
+    <textarea name="body" id="body" cols="30" rows="20">{{onepost.body}}</textarea> 
+    <br><br>
+ 
+    <button type="submit">수정하기</button>
+ 
+</form>
+ 
+<a href="{% url 'detail' onepost.id %}">돌아가기</a>
