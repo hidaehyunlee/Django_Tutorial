@@ -2,4 +2,5 @@
 <p>작성 시간 : {{onepost.created_at}}</p>
 <p>내용 : {{onepost.body}}</p>
 <a href="{% url 'edit' onepost.id %}">수정</a> 
+<a href="{% url 'delete' onepost.id %}">삭제</a>
 <a href="{% url 'home' %}">홈으로</a>

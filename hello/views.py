@@ -32,3 +32,8 @@ def update(request,post_id):
     editpost.body=request.POST['body']
     editpost.save()
     return redirect('/detail/'+str(post_id))
+
+def delete(request,post_id):
+    deletepost=get_object_or_404(Blog,pk=post_id)
+    deletepost.delete()
+    return redirect('home')
