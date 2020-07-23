@@ -1,10 +1,11 @@
-<h1>CRUD 실습</h1>
-<br>
-<a href="{% url 'new' %}">새 글쓰기</a>
+{% extends 'base.html' %}
 
-{% for blog in blogs.all%}
-<div>
-    <h1><a href="{% url 'detail' blog.id %}"> {{blog.title}} </a></h1>
-    <p> {{blog.created_at}}</p>
-</div>
-{%endfor%}
+{% block content %}
+<a href="{% url 'new' %}">새 글쓰기</a>
+    {% for blog in blogs.all%}
+    <div>
+        <h1><a href="{% url 'detail' blog.id %}"> {{blog.title}} </a></h1>
+        <p> {{blog.created_at}}</p>
+    </div>
+    {%endfor%}
+{% endblock %}

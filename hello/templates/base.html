@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "main.css" %}">
+    {% block extrahead %}
+    {% endblock %}
+</head>
+<body>
+    <h1>django 블로그</h1>
+    <div id="nav" class="nav">
+            <div class="icon">
+                <ul>
+                    <li><a title="Home" href="{% url 'home' %}"><i class="fa fa-home "></i></a></li>
+                    <li><a href="{% url 'home' %}"><i class="fa fa-search "></i></a></li>
+                    <li><a href="{% url 'new' %}"><i class="fa fa-edit "></i></a></li>
+        
+                </ul>
+            </div>
+            <div class="text">
+                <ul>
+                    <li><a title="Home" href="{% url 'home' %}">홈</a></li>
+                    <li><a href="{% url 'home' %}" >소개</a></li>
+                    <li><a href="{% url 'new' %}" >새 글쓰기</a></li>
+                </ul>
+            </div>
+	</div>
+    {% block content %} 
+    {% endblock %}
+</body>
+</html>

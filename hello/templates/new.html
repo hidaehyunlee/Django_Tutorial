@@ -1,12 +1,38 @@
-<form action="{% url 'create' %}" method="post">
+{% extends 'base.html'%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% load static %}
+  {% block extrahead %}
+  <link rel="stylesheet" href="{% static "new.css" %}">
+  {% endblock %}
+</head>
+<body>  
+{% block content %}
+
+<div class="container">  
+  <form id="contact" action="{% url 'create' %}" method="post">
     {% csrf_token %}
-    <div>
-      <label for="title">제목</label><br>
-      <input type="text" name="title" id="title">
-    </div>
-    <div>
-        <label for="content">내용</label><br>
-      <textarea name="body" id="body" cols="30" rows="10"></textarea>
-    </div>
-    <input type="submit" value="글쓰기">
-</form>
+    <h3>새 글 작성 </h3>
+    <h4>Contact us today, and get reply with in 24 hours!</h4>
+    <fieldset>
+      <input name="title" id="title" placeholder="Your name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    
+    <fieldset>
+      <textarea name="body" id="body" placeholder="Type your Message Here...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <input type="submit" value="글쓰기" id="contact-submit">
+    </fieldset>
+  </form>
+</div>
+{% endblock %}
+</body>
+</html>
+
+
