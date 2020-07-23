@@ -22,4 +22,5 @@ urlpatterns = [
 	path('', hello.views.home, name='home'),
     path('new/', hello.views.new, name='new'),
     path('create/', hello.views.create, name='create'),
+    path('detail/<int:post_id>', hello.views.detail, name="detail"),
 ]
